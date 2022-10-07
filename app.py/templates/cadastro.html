@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+        label{color: #000;font-family: 'Roboto', sans-serif; font-weight: 400;}
+        .estiloform{margin-bottom: 10px; width: 45%; padding: 10px 1em; border-radius: 9px; border: 1px #000 solid;}
+        .areadetexto{width: 45%;}
+        .estiloformselect{width: 48%; margin-bottom: 10px; padding: 10px 1em; border-radius: 9px; border: 1px #000 solid;}
+        .botoes{padding: 10px 40px; background-color: #ffa726; color: #fff; margin-top: 20px;}
+        .botaocadastro{color: #000000; font-family: 'Roboto', sans-serif;}
+        .titulo{color: #000000; font-family: 'Roboto', sans-serif;}
+    </style>
+<body>
+<body background="https://i.postimg.cc/Px24yqW0/fundo.png">
+
+    <div align="center"> <h2 class="titulo" >MANUTENÇÃO DE VEÍCULOS ADS LTDA</h2> </div>
+    {% block cadastro %}
+    <div align="center">
+    <form action="{{url_for('cadastro')}}", method="POST">
+    
+    <label>Modelo do veículo</label><br>
+    <input type="text" name="modelo" class="estiloform" required placeholder="Digite o modelo"><br>
+    <label>Marca do veículo</label><br>
+    <input type="text" name="marca" class="estiloform"  required placeholder="Digite a marca"><br>
+    <label>Placa do veículo</label><br>
+    <input type="text" name="placa" class="estiloform"  required placeholder="AAA-0A00"><br>
+    <label>Nome do proprietário</label><br>
+    <input type="text" name="nome" class="estiloform"  required placeholder="Nome"><br>
+    <label>Ano de fabricação</label><br>
+    <input type="text" name="ano" class="estiloform"  required placeholder="0000"><br>
+    <br>
+    <label>UF</label>
+    <br>
+    <select id="UF" name="UF" class="estiloformselect" >
+    <option value="">Selecione</option>
+    <option value="AC">AC</option>
+    <option value="AL">AL</option>
+    <option value="AP">AP</option>
+    <option value="AM">AM</option>
+    <option value="BA">BA</option>
+    <option value="CE">CE</option>
+    <option value="DF">DF</option>
+    <option value="ES">ES</option>
+    <option value="GO">GO</option>
+    <option value="MA">MA</option>
+    <option value="MS">MS</option>
+    <option value="MT">MT</option>
+    <option value="MG">MG</option>
+    <option value="PA">PA</option>
+    <option value="PB">PB</option>
+    <option value="PR">PR</option>
+    <option value="PE">PE</option>
+    <option value="PI">PI</option>
+    <option value="RJ">RJ</option>
+    <option value="RN">RN</option>
+    <option value="RS">RS</option>
+    <option value="RO">RO</option>
+    <option value="RR">RR</option>
+    <option value="SC">SC</option>
+    <option value="SP">SP</option>
+    <option value="SE">SE</option>
+    <option value="TO">TO</option>
+    </select>
+    <br>
+    
+    <label>Cidade</label><br>
+    <input type="text" name="cidade" class="estiloform"  required placeholder="Digite a Cidade"><br>
+    
+    <label>Endereço</label><br>
+    <input type="text" name="endereco" class="estiloform"  required placeholder="Rua, Numero, Bairro"><br>
+    <br>
+    
+    <div class="textfield">
+    
+    <label for="Foto"> Escolha uma foto </label>
+    <input type="file" name="foto" placeholder="Foto"><br>
+    <br>
+
+    <label>Descrição da manutenção necessária: </label><br>
+    <textarea class="areadetexto" name= "descricao" ></textarea><br>
+    
+    </div>
+    <input type="submit" class="botoes" value="Enviar Cadastro"><br>
+    <br>
+    <input type="reset" class="botoes" value="Limpar Campos"><br>
+    </form>
+    <br>
+
+    <p><a class="botaocadastro" href="/dados">Cadastros Realizados</a></p>
+    </form> 
+    
+    {% endblock cadastro %}
+    </div>
+    </body>
+    </html>
